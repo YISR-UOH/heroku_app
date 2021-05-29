@@ -1,6 +1,6 @@
+<?php include("database\db.php")?>
 <!doctype html>
 
-<?php include("database\db.php")?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">

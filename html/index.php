@@ -83,28 +83,44 @@
    
             <div class="tarjeta">
                 <?php 
-                    $res = $mysqli->query("SELECT * FROM juegos");
-                    
+                    $res = $mysqli->query("SELECT juegos.id,nombre,Steam.precio_steam,xbox.precio_xbox,playstation.precio_playstation,caratula FROM Steam,xbox,playstation INNER JOIN juegos ON juegos.id=id_juegos GROUP BY juegos.id");
+                    $xbox = $mysqli->query("SELECT xbox.logo FROM xbox GROUP by logo");
+                    $xbox = $xbox->fetch_object();
+                    $steam= $mysqli->query("SELECT Steam.logo FROM Steam GROUP by logo");
+                    $steam = $steam->fetch_object();
+                    $ps4 = $mysqli->query("SELECT playstation.logo FROM playstation GROUP by logo");
+                    $ps4 = $ps4->fetch_object();
                     while($row = $res->fetch_object()){
                         $plataforma=strval("'plataforma ".$row->id."'");
                         $plataforma=htmlspecialchars($plataforma, ENT_COMPAT);
                         $precio=strval("'precio ".$row->id."'");
                         $precio=htmlspecialchars($precio, ENT_COMPAT);
-                        $valor=strval("'$".$row->precio."'");
-                        $valor=htmlspecialchars($valor, ENT_COMPAT);
-
+                        $data=[[$row->precio_steam,$row->precio_playstation,$row->precio_xbox],[$steam->logo,$ps4->logo,$xbox->logo]]
                         ?>
                         <div class="juego">
                             <ul class="thumb">
-                                <li onmouseover="changePrice([<?php echo $precio ?>,<?php echo $valor?>]),changeImageSrc([<?php echo $plataforma?>,'../images/steam.png'])">
-                                    <img src="../images/steam.png">
-                                </li>
-                                <li onmouseover="changePrice([<?php echo $precio ?>,<?php echo $valor?>]),changeImageSrc([<?php echo $plataforma?>,'../images/ps4.png'])">
-                                    <img src="../images/ps4.png">
-                                </li>
-                                <li onmouseover="changePrice([<?php echo $precio ?>,<?php echo $valor?>]),changeImageSrc([<?php echo $plataforma?>,'../images/xbox.png'])">
-                                    <img src="../images/xbox.png">
-                                </li>
+                                <?php 
+                                    for($i=0;$i<3;$i++){
+                                        if($data[0][$i] !=null){
+                                            $valor=$data[0][$i];
+                                            $image=$data[1][$i];
+                                            $data[0][$i]=strval("'$".$data[0][$i]."'");
+                                            $data[0][$i]=htmlspecialchars($data[0][$i], ENT_COMPAT);
+                                            $data[1][$i]=strval("'".$data[1][$i]."'");
+                                            $data[1][$i]=htmlspecialchars($data[1][$i], ENT_COMPAT);
+                                            
+
+                                            ?>
+                                            <li onmouseover="changePrice([<?php echo $precio ?>,<?php echo $data[0][$i]?>]),changeImageSrc([<?php echo $plataforma?>,<?php echo $data[1][$i]?>])">
+                                                <img src=<?php echo $image?>>
+                                            </li>
+                                        <?php
+                                        }
+                                        
+                                    }
+                                
+                                ?>
+
                             </ul>
                             <div class="imgBox">
                                 <div class="titulo">
@@ -119,9 +135,9 @@
                                 </a>
 
                                 <ul class="price">
-                                    <img src="../images/steam.png" class="plataforma" id=<?php echo $plataforma?>>
+                                    <img src=<?php echo $image?> class="plataforma" id=<?php echo $plataforma?>>
                                     <span>Precio</span>
-                                    <li id=<?php echo $precio?>><?php echo $row->precio?></li>
+                                    <li id=<?php echo $precio?>><?php echo $valor?></li>
 
                                 </ul>
 
@@ -148,4 +164,5 @@
         </script>
     </body>
 </html>
+
 

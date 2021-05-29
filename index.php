@@ -1,4 +1,4 @@
-<?php include("..\database\db.php")?>
+<?php include("database\db.php")?>
 
 <!doctype html>
 <html lang="en">
@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tienda</title>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-        <link href="..\css\card.css" rel="stylesheet">
+        <link href="css\card.css" rel="stylesheet">
 
         
     </head>
@@ -23,18 +23,18 @@
 
                 <div class="cuenta">
                     <a href="#">
-                        <img src="../images/cuenta.png">
+                        <img src="images/cuenta.png">
                     </a>
                 </div>
                 <div class="carrito">
                     <a href="#">
-                        <img src="../images/shop.png">
+                        <img src="images/shop.png">
                     </a>    
                 </div>
                 <div class="search">
                     <form>
                         <span class="icon">
-                            <img src="../images/search.png">
+                            <img src="images/search.png">
                         </span>
                         <input type="text" placeholder="Buscar" id="mysearch" autocomplete="off">
                         <div class="selectbox">
@@ -48,7 +48,7 @@
                             <div class="opciones" id="opciones">
                                 <a href="#" class="opcion">
                                     <div class="contenido-opcion">
-                                        <img src="../images/steam.png" alt="">
+                                        <img src="images/steam.png" alt="">
                                         <div class="textos">
                                             <h1 class="titulo">Steam</h1>
                                         </div>
@@ -56,7 +56,7 @@
                                 </a>
                                 <a href="#" class="opcion">
                                     <div class="contenido-opcion">
-                                        <img src="../images/ps4.png" alt="">
+                                        <img src="images/ps4.png" alt="">
                                         <div class="textos">
                                             <h1 class="titulo">Playstation</h1>
                                         </div>
@@ -64,7 +64,7 @@
                                 </a>
                                 <a href="#" class="opcion">
                                     <div class="contenido-opcion">
-                                        <img src="../images/xbox.png" alt="">
+                                        <img src="images/xbox.png" alt="">
                                         <div class="textos">
                                             <h1 class="titulo">Xbox</h1>
                                         </div>
@@ -142,7 +142,7 @@
                                 </ul>
 
                                 <a href="#" class="btn">
-                                    <img src="../images/descargar.png">
+                                    <img src="images/descargar.png">
                                 </a>
                                 
                             </div>
@@ -161,7 +161,7 @@
             
         </div>
 
-        <script src="..\js\card.js" type="text/javascript" charset="utf-8">
+        <script src="js\card.js" type="text/javascript" charset="utf-8">
         </script>
     </body>
 </html>

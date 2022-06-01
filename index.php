@@ -18,7 +18,7 @@ include("db/db.php");
         <p> hola <p>
         <?php
             if ($db) {
-                echo "Conectado";
+                echo "<p> Conectado <p>";
             }
         ?>
     </body>

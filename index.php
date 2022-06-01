@@ -20,7 +20,7 @@
         try{
             $conn = sqlsrv_connect($serverName, $connectionOptions);
         }
-        catch{
+        catch (Exception $e){
             echo "<p> adasdaf <p>";
         }
         $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U'";

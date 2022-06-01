@@ -14,8 +14,9 @@
 
         <p> hola <p>
         <?php
-            $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U';";
+            $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U'";
             $result =  $conn->query($sql);
+            echo "<p> adasdaf <p>";
             if ($result->num_rows > 0) {
             // output data of each row
                 echo "<p> adasdaf <p>";

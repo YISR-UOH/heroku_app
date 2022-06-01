@@ -1,5 +1,5 @@
 <?php
-    include("db/db.php");
+    include("database/db.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +14,6 @@
 
         <p> hola aaa<p>
         <?php
-            include("db/db.php");
             echo "<p> adasdaf <p>";
             $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U'";
             echo "<p>". $sql ."<p>";

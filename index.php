@@ -14,10 +14,17 @@
 
         <p> hola <p>
         <?php
-            echo "<p> Conectado <p>";
-            if ($db) {
-                echo "<p> Conectado <p>";
+            $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U';";
+            $result = Sdb->query($sql);
+            if ($result->num_rows > 0) {
+            // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "id: " . $row["name"] "<br>";
+                }
+            } else {
+              echo "0 results";
             }
+        
         ?>
     </body>
 </html>

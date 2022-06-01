@@ -18,6 +18,7 @@
             $result = Sdb->query($sql);
             if ($result->num_rows > 0) {
             // output data of each row
+                echo "11 results";
                 while($row = $result->fetch_assoc()) {
                     echo "id: " . $row["name"]. "<br>";
                 }

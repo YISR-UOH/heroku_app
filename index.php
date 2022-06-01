@@ -11,9 +11,7 @@
     </head>
 
     <body>
-        <?php
-            include("db/db.php");
-        ?>
+
         <p> hola <p>
         <?php
             echo "<p> Conectado <p>";

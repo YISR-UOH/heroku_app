@@ -12,7 +12,7 @@ $db = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cle
 
 if (!$db) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_errno() . PHP_EOL;
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }

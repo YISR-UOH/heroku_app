@@ -14,17 +14,13 @@
         
 
 
-            $servername = "com501.database.windows.net";
-            $username = "YISR";
-            $password = "yerkoISR098";
-            $dbname = "test";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
+            $serverName = "com501.database.windows.net"; // update me
+            $connectionOptions = array(
+                "Database" => "test", // update me
+                "Uid" => "YISR", // update me
+                "PWD" => "yerkoISR098" // update me
+            );
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
 
             echo "<p> adasdaf <p>";
             $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U'";

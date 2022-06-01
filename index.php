@@ -17,6 +17,7 @@
             include("db/db.php");
             echo "<p> adasdaf <p>";
             $sql = "SELECT name FROM SYSOBJECTS WHERE xtype = 'U'";
+            echo "<p>". $sql ."<p>";
             $result =  $conn->query($sql);
             echo "<p> adasdaf <p>";
             if ($result->num_rows > 0) {

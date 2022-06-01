@@ -1,8 +1,5 @@
 <?php
-
-include("db/db.php");
-
-
+    include("db/db.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +11,9 @@ include("db/db.php");
     </head>
 
     <body>
-        
+        <?php
+            include("db/db.php");
+        ?>
         <p> hola <p>
         <?php
             if ($db) {

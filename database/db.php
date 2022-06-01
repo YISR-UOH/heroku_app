@@ -16,4 +16,7 @@ if (!$db) {
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
+else {
+    echo "conectado";
+}
 ?>

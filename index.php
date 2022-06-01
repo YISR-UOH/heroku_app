@@ -16,6 +16,11 @@ include("db/db.php");
     <body>
         
         <p> hola <p>
+        <?php
+            if ($db) {
+                echo "Conectado";
+            }
+        ?>
     </body>
 </html>
 

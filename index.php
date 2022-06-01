@@ -18,12 +18,12 @@
             $result = Sdb->query($sql);
             if ($result->num_rows > 0) {
             // output data of each row
-                echo "11 results";
+                echo "<p> adasdaf <p>";
                 while($row = $result->fetch_assoc()) {
                     echo "id: " . $row["name"]. "<br>";
                 }
             } else {
-              echo "0 results";
+              echo "<p>0 results<p>";
             }
         
         ?>

@@ -16,6 +16,7 @@
         ?>
         <p> hola <p>
         <?php
+            echo "<p> Conectado <p>";
             if ($db) {
                 echo "<p> Conectado <p>";
             }

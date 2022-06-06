@@ -13,12 +13,20 @@
         <p> hola aaa<p>
         <?php
             include 'database/db.php';
-            $result = pg_query($conn, "SELECT id,name FROM test");
-            while ($row = pg_fetch_row($result)) {
-              echo "Author: $row[0]  E-mail: $row[1]";
-              echo "<br />\n";
+            $query = "SELECT id,name FROM test";
+            $result = pg_query($conn, $query);
+            $resultado = [];
+            while ($row = pg_fetch_assoc($result)) {
+               $resutado[] = $row;
             }
-        
+            //agregamos los encabezados correspondientes a la respuesta
+            //un paso muy improtante que todos se saltean
+            http_response_code(200)
+            header("Content-type:application/json");
+
+            // codificar la respuesta en formato JSON
+            echo json_encode($resutado);
+
         ?>
     </body>
 </html>

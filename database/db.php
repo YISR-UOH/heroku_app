@@ -1,4 +1,4 @@
-<?php
+h<?php
 
 // Create connection
 $conn = pg_connect("host=bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.com port=5432 dbname=test user=uw49pfruyeq3om3uq0tk password=uw49pfruyeq3om3uq0tk");
@@ -6,10 +6,10 @@ $conn = pg_connect("host=bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.c
 
 
 if ($conn) {
-    print "Successfully connected to database: " . pg_dbname($conn) .
+    echo "Successfully connected to database: " . pg_dbname($conn) .
      " on " .  pg_host($conn) . "<br/>\n";
 } else {
-    print pg_last_error($conn);
+    echo pg_last_error($conn);
     exit;
 }
 ?>

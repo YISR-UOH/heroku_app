@@ -1,7 +1,5 @@
 <!doctype html>
-<?php
-    include 'database/db.php'
-?>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,6 +9,9 @@
     </head>
 
     <body>
+        <?php
+            include 'database/db.php'
+        ?>
 
         <p> hola aaa<p>
         <?php

@@ -13,6 +13,7 @@
         <p> hola aaa<p>
         <?php
             include 'database/db.php';
+        print "<p> asda -" .pg_dbname(). "--<p>";
             echo "<p> asda -" .pg_dbname(). "--<p>";
             $result = pg_query($conn, "SELECT * FROM test");
             if (!$result) {

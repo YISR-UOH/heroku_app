@@ -13,18 +13,6 @@
         <p> hola aaa<p>
         <?php
             include 'database/db.php';
-        print "<p> asda -" .pg_dbname(). "--<p>";
-            echo "<p> asda -" .pg_dbname(). "--<p>";
-            $result = pg_query($conn, "SELECT * FROM test");
-            if (!$result) {
-              echo "An error occurred.\n";
-              exit;
-            }
-
-            while ($row = pg_fetch_row($result)) {
-              echo "id: $row[0]  name: $row[1] age: $row[2] content: $row[3]";
-              echo "<br />\n";
-            }
         ?>
     </body>
 </html>

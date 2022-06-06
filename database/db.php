@@ -6,8 +6,7 @@ $conn = pg_connect("host=bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.c
 echo "hola mundo";
 
 if ($conn) {
-    echo "Successfully connected to database: " . pg_dbname($conn) .
-     " on " .  pg_host($conn) . "<br/>\n";
+    echo "Successfully connected to database: " . pg_dbname($conn) . " on " .  pg_host($conn) . "<br/>\n";
 } else {
     echo pg_last_error($conn);
     exit;

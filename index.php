@@ -9,12 +9,10 @@
     </head>
 
     <body>
-        <?php
-            include 'database/db.php'
-        ?>
 
         <p> hola aaa<p>
         <?php
+            include 'database/db.php'
             $query = 'SELECT * FROM test LIMIT 100';
             $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
 

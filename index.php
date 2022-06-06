@@ -13,6 +13,12 @@
         <p> hola aaa<p>
         <?php
             include 'database/db.php';
+            $result = pg_query($conn, "SELECT id,name FROM test");
+            while ($row = pg_fetch_row($result)) {
+              echo "Author: $row[0]  E-mail: $row[1]";
+              echo "<br />\n";
+            }
+        
         ?>
     </body>
 </html>

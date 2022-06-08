@@ -1,13 +1,14 @@
 <?php
+$usuario = "uw49pfruyeq3om3uq0tk";
+$password = "U7rwqw4Kva71aUc8ljoX";
+$host = "bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.com";
+$basedatos = "bcgvo3crlk65uicfag0j";
 
-// Create connection
 
-$conn = pg_connect("host=bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.com port=5432 dbname=bcgvo3crlk65uicfag0j user=uw49pfruyeq3om3uq0tk password=uw49pfruyeq3om3uq0tk");
-
-if(!$conn) {
-echo "Error: No se ha podido conectar a la base de datos\n";
-} else {
-echo "Conexión exitosa\n";
+try {
+  $conn = new PDO("pgsql:host=bcgvo3crlk65uicfag0j-postgresql.services.clever-cloud.com;port=5432;dbname=bcgvo3crlk65uicfag0j;user=uw49pfruyeq3om3uq0tk;password=U7rwqw4Kva71aUc8ljoX");
+}catch(Exception $e){
+  echo "No se ha podido conectar con el servidor " .$e ;
 }
 
 ?>

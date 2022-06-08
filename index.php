@@ -1,34 +1,73 @@
-<!doctype html>
+<?php
+include 'db.php';
+?>
 
+
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ayudantia</title>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>     
-    </head>
+  <head>
+    <!-- link de css, titulo, link javascript, etc-->
+    <meta charset="UTF-8"/>
 
-    <body>
+    <title>ayudantia 6</title> <!--titulo de la pagina-->
 
-        <p> hola aaa<p>
-        <?php
-            include 'database/db.php';
-            $query = "SELECT id,name FROM test";
-            $result = pg_query($conn, $query);
-            $resultado = [];
-            while ($row = pg_fetch_assoc($result)) {
-               $resutado[] = $row;
-            }
-            //agregamos los encabezados correspondientes a la respuesta
-            //un paso muy improtante que todos se saltean
-            http_response_code(200)
-            header("Content-type:application/json");
+    <link href="css/style.css" rel="stylesheet" type="text/css" > <!--link al archivo css-->
 
-            // codificar la respuesta en formato JSON
-            echo json_encode($resutado);
+    <script src="js/script.js"></script> <!--link al archivo JavaScript-->
+  </head>
 
-        ?>
-    </body>
+  <body>
+    <br />
+    <p>lista de tablas</p>
+    <table>
+      <tr>
+        <th>name</th>
+        <th>elementos</th>
+      </tr>
+      <?php
+        $sql = "SELECT table_name FROM bcgvo3crlk65uicfag0j.INFORMATION_SCHEMA.TABLES WHERE table_schema = 'test' ";
+        foreach ($conn->query($sql) as $row) {
+          $sql = "SELECT count(id) FROM test.".$row[0];
+          echo "<tr>";
+          echo "<td>".$row[0]."</td>";
+          foreach ($conn->query($sql) as $row) {
+            echo "<td>".$row[0]."</td>";
+          }
+          echo "</tr>";
+        }
+      ?>
+    </table>
+    <br />
+    <p>Elementos en tabla test</p>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>content</th>
+      </tr>
+      <?php
+        $sql = 'SELECT * FROM test.test';
+        foreach ($conn->query($sql) as $row) {
+          echo "<tr>";
+          echo "<td>".$row[0]."</td>";
+          echo "<td>".$row[1]."</td>";
+          echo "<td>".$row[2]."</td>";
+          echo "<td>".$row[3]."</td>";
+          echo "</tr>";
+        }
+      ?>
+    </table>
+
+
+    <input class="agregar"type="button" onclick="create()" value="newclass" /> <!-- genera un boton el cual dada una funcion javascript agrega elementos al html-->
+
+  </body>
+
+
 </html>
+
+
+
 
 

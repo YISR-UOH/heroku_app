@@ -10,62 +10,47 @@ include 'db/db.php';
     <title>ayudantia 6</title> <!--titulo de la pagina-->
 
     <link href="css/style.css" rel="stylesheet" type="text/css" > <!--link al archivo css-->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
   </head>
 
   <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+
     <br />
-    <p>lista de tablas</p>
-    <table>
-      <tr>
-        <th>name</th>
-        <th>elementos</th>
-      </tr>
-      <?php
-        $sql = "SELECT table_name FROM bcgvo3crlk65uicfag0j.INFORMATION_SCHEMA.TABLES WHERE table_schema = 'test' ";
-        foreach ($conn->query($sql) as $row) {
-          $sql = "SELECT count(id) FROM test.".$row[0];
-          echo "<tr>";
-          echo "<td>".$row[0]."</td>";
-          foreach ($conn->query($sql) as $row) {
-            echo "<td>".$row[0]."</td>";
-          }
-          echo "</tr>";
-        }
-      ?>
-    </table>
+    <div id="update_list"></div>
     <br />
+
     <p>Elementos en tabla test</p>
-    <table>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>age</th>
-        <th>content</th>
-      </tr>
-      <?php
-        $sql = 'SELECT * FROM test.test';
-        foreach ($conn->query($sql) as $row) {
-          echo "<tr>";
-          echo "<td>".$row[0]."</td>";
-          echo "<td>".$row[1]."</td>";
-          echo "<td>".$row[2]."</td>";
-          echo "<td>".$row[3]."</td>";
-          echo "</tr>";
-        }
-      ?>
-    </table>
+
     <br />
+    <div id="update_table"></div>
     <br />
     <input type="TEXT" id="search" />
       </p>
-      <span id="result"></span>
+      <div id="result"></div>
     <br />
     <br />
-    <p>crear tabla</p>
-  <p>agregar elemento a tabla</p>
+    <p>agregar datos</p>
+    <div>
+      <form action="backend.php" method="post" id="add">
+        name   : <input type="text" name="name"><br>
+        age    : <input type="text" name="age"><br>
+        content: <input type="text" name="content"><br>
+        <input type="submit" >
+      </form>
+    </div>
+    <br />
+    <p>eliminar datos</p>
+    <div>
+      <form action="backend.php" method="post" id="del">
+        name   : <input type="text" name="name"><br>
+        age    : <input type="text" name="age"><br>
+        content: <input type="text" name="content"><br>
+        <input type="submit" >
+      </form>
+    </div>
+    </p>
+
   </body>
 
 

@@ -12,7 +12,10 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
+div.result{
+  margin: 20px;
+  padding: 10px;
+}
 .data{
   float: left;
   margin: 20px;

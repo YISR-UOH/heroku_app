@@ -1,8 +1,6 @@
 <?php
-include 'database/db.php';
+include 'db/db.php';
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +10,12 @@ include 'database/db.php';
     <title>ayudantia 6</title> <!--titulo de la pagina-->
 
     <link href="css/style.css" rel="stylesheet" type="text/css" > <!--link al archivo css-->
-
-    <script src="js/script.js"></script> <!--link al archivo JavaScript-->
+    
   </head>
 
   <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <br />
     <p>lista de tablas</p>
     <table>
@@ -58,16 +57,19 @@ include 'database/db.php';
         }
       ?>
     </table>
-
-
-    <input class="agregar"type="button" onclick="create()" value="newclass" /> <!-- genera un boton el cual dada una funcion javascript agrega elementos al html-->
-
+    <br />
+    <br />
+    <input type="TEXT" id="search" />
+      </p>
+      <span id="result"></span>
+    <br />
+    <br />
+    <p>crear tabla</p>
+    $statements = 
   </body>
 
 
 </html>
-
-
 
 
 

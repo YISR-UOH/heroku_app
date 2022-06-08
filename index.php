@@ -65,7 +65,7 @@ include 'db/db.php';
     <br />
     <br />
     <p>crear tabla</p>
-    $statements = 
+  <p>agregar elemento a tabla</p>
   </body>
 
 

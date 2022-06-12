@@ -1,3 +1,4 @@
+<!-- se realiza la consulta y retorna una tabla -->
 <?php
   include 'db/db.php';
   

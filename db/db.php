@@ -1,3 +1,5 @@
+<!-- se conecta a la base de datos -->
+
 <?php
 $usuario = "uw49pfruyeq3om3uq0tk";
 $password = "U7rwqw4Kva71aUc8ljoX";
